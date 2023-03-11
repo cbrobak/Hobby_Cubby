@@ -3,10 +3,11 @@
 <div id="hobbies">
   <% @hobbies.each do |hobby| %>
     <div class="row">
-      <div class="col-6"><%= link_to hobby.activity, hobby_path(hobby.id) %></div>
-      <div class="col-6"><%= link_to "Like this hobby", like_path(hobby.id) %></div>
+      <div class="col-4"><%= link_to hobby.activity, hobby_path(hobby.id) %></div>
+      <div class="col-4"><%= link_to "Like this hobby", like_path(hobby.id) %></div>
+      <div class="col-4"><%= button_to "Destroy this hobby", hobby, class: "text-danger", method: :delete %></div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "Create a new Hobby", new_hobby_path, class: "text-dark" %>
+<div class="col-4 offset-4 mt-5"><%= link_to "Create a new Hobby", new_hobby_path, class: "text-dark" %></div>
